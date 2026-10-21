@@ -34,7 +34,7 @@ export async function onRequestPost({ request, env }) {
   const interest = clean(body.interest, 30);
   const locale = ["ru", "kk", "en"].includes(body.locale) ? body.locale : "ru";
   if (name.length < 2 || !/^\+?[\d\s()+-]{8,25}$/.test(phone)) return json({ ok: false, error: "Invalid contact details" }, 400);
-  if (!["demo", "pilot", "consultation"].includes(interest)) return json({ ok: false, error: "Invalid interest" }, 400);
+  if (!["demo", "pilot", "consultation", "gptads"].includes(interest)) return json({ ok: false, error: "Invalid interest" }, 400);
   // No request data is stored by this function. Details are forwarded to Telegram only.
   if (!env.TELEGRAM_BOT_TOKEN || !env.TELEGRAM_CHAT_ID) return json({ ok: false, error: "Form delivery is not configured" }, 503);
   const date = new Date().toISOString();
