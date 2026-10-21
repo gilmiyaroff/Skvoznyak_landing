@@ -78,3 +78,51 @@
  .integration-chip{transform:translate(-50%,-50%)!important}
 }
 @media(prefers-reduced-motion:reduce) and (max-width:980px){.integration-chip{transform:none!important}}
+
+/* Integration categories: GA4 and Wazzup, balanced desktop and phone layouts */
+.integrations-scene.integrations-scene--grouped{height:auto;padding:24px;overflow:hidden}
+.integration-core.integration-core--grouped{position:relative;left:auto;top:auto;transform:none;width:min(100%,710px);max-width:710px;min-height:0;margin:0 auto 24px;padding:24px 20px}
+.integration-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;position:relative;z-index:2}
+.integration-group{min-width:0;padding:17px;border:1px solid rgba(112,176,213,.22);border-radius:18px;background:linear-gradient(145deg,rgba(16,44,64,.86),rgba(9,27,45,.93));box-shadow:inset 0 1px 0 rgba(255,255,255,.04);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.75,.24,1)}
+.integration-group__head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:13px}
+.integration-group__head h3{margin:0;color:#7eeac5;font-size:12px;letter-spacing:.09em;text-transform:uppercase;line-height:1.55}
+.integration-group__count{font-size:11px;letter-spacing:.08em;font-weight:800;color:#88a9bc}
+.integration-group:nth-child(1) .integration-group__head h3{color:#8bccff}
+.integration-group:nth-child(2) .integration-group__head h3{color:#ffa0d5}
+.integration-group:nth-child(3) .integration-group__head h3{color:#7eeac5}
+.integration-group:nth-child(4) .integration-group__head h3{color:#ffcb80}
+.integration-group__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.integration-groups .integration-chip{position:relative;left:auto;top:auto;right:auto;bottom:auto;min-width:0;transform:translate3d(0,var(--scroll-shift,0px),0);will-change:auto}
+.integration-groups .integration-chip__inner{width:100%;height:100%;min-height:61px;gap:9px;padding:9px 10px;border-radius:13px;animation:integrationFloat 6.9s ease-in-out var(--delay,0s) infinite}
+.integration-groups .integration-chip:nth-child(2n) .integration-chip__inner{animation-duration:8.5s}
+.integration-groups .integration-chip__badge{width:35px;height:35px;flex-basis:35px;border-radius:10px}
+.integration-groups .integration-chip__name{font-size:13px;font-weight:750;line-height:1.25;white-space:normal;overflow-wrap:anywhere}
+.integration-chip--wazzup{--brand:#3cdbc2;--badge-bg:rgba(26,195,165,.14);--delay:-2.2s}
+.integration-chip--googleanalytics{--brand:#f6af42;--badge-bg:rgba(248,173,66,.14);--delay:-1.5s}
+.integration-chip--wazzup .integration-wordmark{font-size:20px}
+.integration-motion-enabled .integration-group:not(.is-visible){opacity:0;transform:translateY(16px)}
+.integrations-scene--grouped .integrations-glow{transform:translate(-50%,calc(-50% + var(--glow-shift,0px)))}
+@media(max-width:980px){
+ .integrations-scene.integrations-scene--grouped{height:auto;padding:17px}
+ .integration-core.integration-core--grouped{width:100%;max-width:none;padding:22px 18px}
+ .integration-groups{grid-template-columns:1fr;gap:12px}
+ .integration-group__grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:680px){
+ .integrations-scene.integrations-scene--grouped{padding:12px}
+ .integration-core.integration-core--grouped{margin-bottom:15px;padding:20px 12px}
+ .integration-group{padding:12px;border-radius:15px}
+ .integration-group__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .integration-group__head{margin-bottom:11px}
+ .integration-group__head h3{font-size:11.5px}
+ .integration-groups .integration-chip__inner{min-height:59px;gap:7px;padding:7px}
+ .integration-groups .integration-chip__badge{width:32px;height:32px;flex-basis:32px}
+ .integration-groups .integration-chip__name{font-size:11.5px}
+}
+@media(max-width:350px){
+ .integration-groups .integration-chip__badge{width:28px;height:28px;flex-basis:28px}
+ .integration-groups .integration-chip__name{font-size:10.5px}
+}
+@media(prefers-reduced-motion:reduce){
+ .integration-motion-enabled .integration-group:not(.is-visible),.integration-groups .integration-chip,.integration-groups .integration-chip__inner{opacity:1!important;animation:none!important;transform:none!important;transition:none!important}
+}
