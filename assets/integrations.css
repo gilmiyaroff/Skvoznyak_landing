@@ -1,0 +1,80 @@
+
+/* SKVOZNYAK — integration ecosystem, scoped away from core product and GPT Ads. */
+.integrations-section{padding:72px 0 62px;background:radial-gradient(ellipse at 49% 58%,rgba(20,154,152,.11),transparent 58%),linear-gradient(180deg,#081a2d 0%,#071727 100%);border-block:1px solid rgba(119,183,212,.13);color:#eff9ff;overflow:hidden}
+.integrations-heading{max-width:830px;margin:0 auto 28px;text-align:center}
+.integrations-heading .eyebrow{color:#61e6b6}
+.integrations-heading h2{font-size:clamp(28px,3.3vw,44px);letter-spacing:-.045em;line-height:1.14;font-weight:850;margin:12px auto 13px;max-width:760px;text-wrap:balance}
+.integrations-heading p{max-width:680px;margin:0 auto;font-size:clamp(14px,1.35vw,16px);line-height:1.7;color:#a9c1d0}
+.integrations-scene{position:relative;height:525px;isolation:isolate;overflow:hidden;border:1px solid rgba(112,176,213,.19);border-radius:26px;background:radial-gradient(circle at 50% 48%,rgba(32,193,168,.16),transparent 35%),radial-gradient(circle at 20% 22%,rgba(48,135,193,.10),transparent 40%),#0a1b2c;box-shadow:inset 0 1px 0 rgba(255,255,255,.035),0 26px 70px rgba(0,0,0,.18)}
+.integrations-scene::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(133,198,225,.042) 1px,transparent 1px),linear-gradient(90deg,rgba(133,198,225,.042) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(180deg,rgba(0,0,0,.75),transparent 96%);z-index:-1}
+.integrations-glow{position:absolute;left:50%;top:52%;width:min(560px,72%);aspect-ratio:1/1;transform:translate(-50%,-50%);pointer-events:none;background:radial-gradient(circle,rgba(50,220,183,.11),transparent 68%);filter:blur(24px)}
+.integrations-connections{position:absolute;inset:0;width:100%;height:100%;color:#397a82;pointer-events:none}
+.integrations-cloud{position:absolute;inset:0}
+.integration-core{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);z-index:3;width:350px;min-height:180px;padding:25px 22px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;border:1px solid rgba(102,236,194,.37);border-radius:22px;background:linear-gradient(150deg,rgba(15,58,66,.96),rgba(11,39,57,.98));box-shadow:0 18px 64px rgba(0,0,0,.35),0 0 48px rgba(53,213,169,.09),inset 0 1px 0 rgba(255,255,255,.12)}
+.integration-core__identity{display:flex;align-items:center;gap:9px;font-size:15px;letter-spacing:.09em;font-weight:900;color:#f0fbff}
+.integration-core__identity .logo-mark{width:34px;height:34px;flex-basis:34px}
+.integration-core h3{font-size:21px;line-height:1.22;letter-spacing:-.035em;margin:14px 0 7px;color:#f3fbff}
+.integration-core p{margin:0;color:#b5dbd7;font-size:12.5px}
+.integration-core__status{display:inline-flex;align-items:center;gap:12px;margin-top:14px;font-size:10px;font-weight:800;letter-spacing:.12em;color:#91deca}
+.integration-core__status .pulse{flex:0 0 7px}
+.integration-chip{position:absolute;left:var(--x);top:var(--y);z-index:2;transform:translate(calc(-50% + var(--px,0px)),calc(-50% + var(--py,0px)));will-change:transform}
+.integration-chip__inner{display:flex;align-items:center;gap:10px;min-height:60px;padding:9px 15px 9px 10px;border:1px solid rgba(142,192,219,.20);border-radius:16px;background:linear-gradient(142deg,rgba(24,51,71,.91),rgba(11,32,49,.94));box-shadow:0 13px 25px rgba(0,0,0,.19),inset 0 1px 0 rgba(255,255,255,.04);backdrop-filter:blur(11px);-webkit-backdrop-filter:blur(11px);animation:integrationFloat var(--float-duration,7s) ease-in-out var(--delay,0s) infinite;transition:border-color .2s,background .2s,box-shadow .2s}
+.integration-chip__inner:hover{border-color:rgba(101,232,187,.55);background:#163a49;box-shadow:0 16px 38px rgba(0,0,0,.30)}
+.integration-chip__badge{display:grid;place-items:center;flex:0 0 38px;width:38px;height:38px;border-radius:12px;color:var(--brand,#86e7c4);background:var(--badge-bg,rgba(128,230,205,.09));border:1px solid rgba(255,255,255,.075)}
+.integration-icon{display:block;width:23px;height:23px;fill:currentColor}
+.integration-wordmark{font-weight:900;letter-spacing:-.065em;font-size:17px;line-height:1;white-space:nowrap}
+.integration-chip__name{font-weight:770;white-space:nowrap;font-size:13.5px;color:#e5f2fc}
+.integrations-footnote{font-size:12px;line-height:1.6;text-align:center;margin:16px auto 0;color:#859daf;max-width:780px}
+.integration-chip--meta{--x:12%;--y:16%;--brand:#3d92f6;--badge-bg:rgba(36,118,235,.15);--delay:-1.3s;--float-duration:7.6s}
+.integration-chip--googleads{--x:32%;--y:12%;--brand:#54a4fb;--badge-bg:rgba(63,149,244,.14);--delay:-3s;--float-duration:6.9s}
+.integration-chip--whatsapp{--x:62%;--y:12%;--brand:#45dc87;--badge-bg:rgba(31,188,108,.12);--delay:-.8s}
+.integration-chip--youtube{--x:86%;--y:16%;--brand:#ff5b68;--badge-bg:rgba(255,53,82,.12);--delay:-4.2s;--float-duration:7.8s}
+.integration-chip--amocrm{--x:12%;--y:40%;--brand:#66c7f0;--badge-bg:rgba(47,158,221,.14);--delay:-2.5s;--float-duration:7.2s}
+.integration-chip--amocrm .integration-wordmark{font-size:13px;letter-spacing:-.05em}
+.integration-chip--kelesu{--x:26%;--y:42%;--brand:#6bddb7;--badge-bg:rgba(50,203,148,.14);--delay:-3.5s;--float-duration:7.3s}
+.integration-chip--bitrix24{--x:88%;--y:42%;--brand:#4cb5ff;--badge-bg:rgba(42,164,244,.13);--delay:-1.7s}
+.integration-chip--tiktok{--x:9%;--y:65%;--brand:#fff;--badge-bg:rgba(123,231,229,.10);--delay:-4.1s;--float-duration:8s}
+.integration-chip--instagram{--x:88%;--y:65%;--brand:#fc75b6;--badge-bg:rgba(230,69,160,.13);--delay:-2.2s;--float-duration:7.3s}
+.integration-chip--googlesheets{--x:14%;--y:88%;--brand:#5ed59b;--badge-bg:rgba(47,166,105,.13);--delay:-5.2s}
+.integration-chip--telegram{--x:35%;--y:88%;--brand:#59caff;--badge-bg:rgba(24,160,232,.13);--delay:-1.3s;--float-duration:6.8s}
+.integration-chip--tilda{--x:57%;--y:88%;--brand:#ffb18b;--badge-bg:rgba(243,155,103,.13);--delay:-3.4s;--float-duration:7.5s}
+.integration-chip--sipuni{--x:78%;--y:88%;--brand:#88a9ff;--badge-bg:rgba(108,134,236,.13);--delay:-4.9s;--float-duration:7.8s}
+@keyframes integrationFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@media(min-width:981px) and (max-width:1120px){.integrations-scene{height:520px}.integration-core{width:315px;padding:20px 15px}.integration-chip__inner{padding:8px 11px 8px 8px;gap:7px}.integration-chip__badge{width:32px;height:32px;flex-basis:32px}.integration-chip__name{font-size:12px}.integration-icon{width:20px;height:20px}}
+@media(max-width:980px){
+ .integrations-section{padding:56px 0 52px}
+ .integrations-heading{margin-bottom:22px;text-align:left}
+ .integrations-heading h2{margin-left:0;text-align:left}
+ .integrations-heading p{margin-left:0}
+ .integrations-scene{height:auto;padding:18px;border-radius:22px;overflow:hidden}
+ .integrations-connections{display:none}
+ .integrations-cloud{position:relative;inset:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+ .integration-core{position:relative;left:auto;top:auto;transform:none;grid-column:1/-1;width:100%;min-height:0;padding:24px 18px;margin-bottom:5px}
+ .integration-chip{position:relative;left:auto;top:auto;transform:translate3d(var(--px,0px),var(--py,0px),0)}
+ .integration-chip__inner{width:100%;min-height:60px;padding:9px 11px;gap:8px}
+ .integration-chip__badge{flex-basis:34px;width:34px;height:34px}
+ .integration-icon{width:21px;height:21px}
+ .integration-chip__name{font-size:12.5px;white-space:normal;line-height:1.18;overflow-wrap:anywhere}
+ .integrations-footnote{text-align:left}
+}
+@media(max-width:680px){
+ .integrations-scene{padding:13px}
+ .integrations-cloud{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .integration-chip__inner{min-height:58px;padding:8px;gap:8px}
+ .integration-chip__badge{flex-basis:33px;width:33px;height:33px;border-radius:9px}
+ .integration-chip__name{font-size:12px}
+ .integration-core h3{font-size:22px}
+}
+@media(max-width:380px){
+ .integrations-section .container{width:calc(100% - 30px)}
+ .integrations-scene{padding:10px}
+ .integrations-cloud{gap:8px}
+ .integration-chip__badge{width:29px;height:29px;flex-basis:29px}
+ .integration-icon{width:19px;height:19px}
+ .integration-chip__name{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){
+ .integration-chip,.integration-chip__inner{animation:none!important;transition:none!important;transform:none!important}
+ .integration-chip{transform:translate(-50%,-50%)!important}
+}
+@media(prefers-reduced-motion:reduce) and (max-width:980px){.integration-chip{transform:none!important}}
