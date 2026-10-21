@@ -31,6 +31,54 @@
     });
   });
 
+  // Product showcase: synchronized accessible tabs and an enlarged desktop screenshot.
+  const tabs = [...document.querySelectorAll('[data-screen-tab]')];
+  const screenImage = document.querySelector('[data-screen-image]');
+  const screenRoute = document.querySelector('[data-screen-route]');
+  const screenCaption = document.querySelector('[data-screen-caption]');
+  const screenPanel = document.querySelector('[data-screen-panel]');
+  const screenDialog = document.querySelector('[data-screen-dialog]');
+  const dialogImage = document.querySelector('[data-screen-dialog-image]');
+  const zoom = document.querySelector('[data-screen-open]');
+  const closeZoom = document.querySelector('[data-screen-close]');
+  if (screenImage && tabs.length) {
+    const selectScreen = (button) => {
+      const key = button.dataset.screenTab;
+      const src = key === 'ads' ? screenImage.dataset.adsSrc : screenImage.dataset.overviewSrc;
+      const alt = key === 'ads' ? screenImage.dataset.altAds : screenImage.dataset.altOverview;
+      screenImage.src = src;
+      screenImage.alt = alt;
+      if (screenCaption) screenCaption.textContent = button.dataset.caption;
+      if (screenRoute) screenRoute.textContent = button.dataset.url;
+      if (screenPanel) screenPanel.setAttribute('aria-labelledby', button.id);
+      tabs.forEach(tab => {
+        const active = tab === button;
+        tab.classList.toggle('is-active', active);
+        tab.setAttribute('aria-selected', String(active));
+        tab.tabIndex = active ? 0 : -1;
+      });
+    };
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => selectScreen(tab));
+      tab.addEventListener('keydown', (event) => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        const nextIndex = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 :
+          (index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+        selectScreen(tabs[nextIndex]);
+        tabs[nextIndex].focus();
+      });
+    });
+    zoom?.addEventListener('click', () => {
+      if (!screenDialog || !dialogImage || typeof screenDialog.showModal !== 'function') return;
+      dialogImage.src = screenImage.src;
+      dialogImage.alt = screenImage.alt;
+      screenDialog.showModal();
+    });
+    closeZoom?.addEventListener('click', () => screenDialog?.close());
+    screenDialog?.addEventListener('click', e => { if (e.target === screenDialog) screenDialog.close(); });
+  }
+
   const form = document.querySelector('[data-lead-form]');
   if (!form) return;
   const status = form.querySelector('[data-form-status]');
