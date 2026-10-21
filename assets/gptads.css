@@ -138,3 +138,67 @@
  .gpt-quote h2,.gpt-fee .gpt-quote h2{font-size:clamp(30px,8vw,37px);line-height:1.23}
  .gpt-page .button{font-size:15px}
 }
+
+/* GPT Ads motion v1 — transform/opacity only, no layout shift.
+   Visible by default; enhanced only if JavaScript initialized the observer. */
+@media (prefers-reduced-motion: no-preference) {
+  .gpt-page.has-gpt-motion .gpt-intro-item {
+    animation: gpt-hero-arrive 760ms cubic-bezier(.22,1,.36,1) both;
+    animation-delay: var(--gpt-delay,0ms);
+  }
+  @keyframes gpt-hero-arrive {
+    from { opacity: 0; transform: translate3d(0,17px,0); }
+    to { opacity: 1; transform: translate3d(0,0,0); }
+  }
+  .gpt-page.has-gpt-motion .gpt-reveal-item {
+    opacity:0;
+    transform:translate3d(0,20px,0);
+    transition:opacity 710ms cubic-bezier(.22,1,.36,1),
+               transform 720ms cubic-bezier(.22,1,.36,1);
+    transition-delay:var(--gpt-reveal-delay,0ms);
+  }
+  .gpt-page.has-gpt-motion .gpt-reveal-item.gpt-is-visible {
+    opacity:1;
+    transform:translate3d(0,0,0);
+  }
+  .gpt-page .gpt-benefit,
+  .gpt-page .gpt-service,
+  .gpt-page .gpt-budget-card {
+    transition:border-color 220ms ease,box-shadow 260ms ease;
+  }
+  .gpt-page .gpt-benefit:hover,
+  .gpt-page .gpt-budget-card:hover {
+    border-color:#65cdb7;
+    box-shadow:0 14px 32px rgba(5,73,77,.12);
+  }
+  .gpt-page .gpt-service:hover{
+    border-color:#367c75;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+  }
+}
+@media (prefers-reduced-motion: no-preference) and (max-width: 770px) {
+  .gpt-page.has-gpt-motion .gpt-intro-item {
+    animation-duration:590ms;
+  }
+  .gpt-page.has-gpt-motion .gpt-reveal-item {
+    transform:translate3d(0,12px,0);
+    transition-duration:540ms,570ms;
+  }
+}
+/* Do not animate content for people who request reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .gpt-page .gpt-intro-item {
+    animation:none!important;
+  }
+  .gpt-page .gpt-reveal-item {
+    opacity:1!important;
+    transform:none!important;
+    transition:none!important;
+  }
+}
+@media print {
+  .gpt-page .gpt-reveal-item {
+    opacity:1!important;
+    transform:none!important;
+  }
+}
