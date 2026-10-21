@@ -3,6 +3,12 @@
  * Configure environment secrets in Pages > Settings > Variables and Secrets:
  * TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
  * The lead form reports success only if Telegram confirms delivery.
+ * TODO(deployment): verify both production Cloudflare Pages secrets
+ * TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID, then send a synthetic lead.
+ * Until these secrets exist the handler correctly responds HTTP 503.
+ * TODO(CRM): only replace Telegram with the approved SKVOZNYAK Leads
+ * ingest endpoint after that secure server and lead storage are deployed.
+ * Do not report that leads are being stored in the CRM before cutover.
  */
 const json = (value, status = 200) => new Response(JSON.stringify(value), {
   status,
