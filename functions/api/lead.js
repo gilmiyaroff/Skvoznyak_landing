@@ -32,7 +32,7 @@ export async function onRequestPost({ request, env }) {
   const phone = clean(body.phone, 25);
   const company = clean(body.company, 120);
   const interest = clean(body.interest, 30);
-  const locale = body.locale === "en" ? "en" : "ru";
+  const locale = ["ru", "kk", "en"].includes(body.locale) ? body.locale : "ru";
   if (name.length < 2 || !/^\+?[\d\s()+-]{8,25}$/.test(phone)) return json({ ok: false, error: "Invalid contact details" }, 400);
   if (!["demo", "pilot", "consultation"].includes(interest)) return json({ ok: false, error: "Invalid interest" }, 400);
   // No request data is stored by this function. Details are forwarded to Telegram only.
