@@ -388,12 +388,6 @@ body{letter-spacing:0;text-rendering:optimizeLegibility}
   pointer-events: none !important;
   clip-path: inset(50%);
 }
-.pilot-price-note {
-  margin-top: 15px !important;
-  font-size: 15px !important;
-  color: #91e5c9 !important;
-  font-weight: 750;
-}
 .pilot-cases-section { background: #071a2a; }
 .pilot-cases-grid {
   display: grid;
