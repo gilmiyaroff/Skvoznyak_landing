@@ -242,6 +242,32 @@
   };
   const t = messages[document.documentElement.lang] || messages.ru;
 
+  // Capture campaign attribution without collecting contact information in storage.
+  const trackingKey = 'skvoznyak_lead_campaign';
+  const params = new URLSearchParams(window.location.search);
+  let tracking = {};
+  try { tracking = JSON.parse(sessionStorage.getItem(trackingKey) || '{}') || {}; } catch {}
+  const utmNames = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  if (utmNames.some(key => params.has(key))) {
+    tracking = Object.fromEntries(utmNames.map(key => [key, (params.get(key) || '').slice(0, 150)]));
+    try { sessionStorage.setItem(trackingKey, JSON.stringify(tracking)); } catch {}
+  }
+  let submissionId = crypto.randomUUID();
+  const serviceField = form.querySelector('[data-service-field]');
+  const serviceInput = form.querySelector('[name="service"]');
+  const interestSelect = form.querySelector('[name="interest"]');
+  const toggleServiceField = () => {
+    if (!serviceField) return;
+    serviceField.hidden = interestSelect?.value !== 'integration';
+    if (serviceInput) serviceInput.required = interestSelect?.value === 'integration';
+  };
+  interestSelect?.addEventListener('change', toggleServiceField);
+  document.querySelectorAll('.integration-request').forEach(link => link.addEventListener('click', () => {
+    if (interestSelect) interestSelect.value = 'integration';
+    toggleServiceField();
+  }));
+  toggleServiceField();
+
   form.addEventListener('submit', async e => {
     e.preventDefault();
     if (!form.reportValidity()) return;
@@ -267,7 +293,15 @@
           interest: String(data.get('interest') || ''),
           website: String(data.get('website') || ''),
           locale: document.documentElement.lang,
-          page: window.location.href
+          page: window.location.href,
+          referrer: document.referrer,
+          service: String(data.get('service') || '').trim(),
+          submissionId,
+          utmSource: String(tracking.utm_source || ''),
+          utmMedium: String(tracking.utm_medium || ''),
+          utmCampaign: String(tracking.utm_campaign || ''),
+          utmContent: String(tracking.utm_content || ''),
+          utmTerm: String(tracking.utm_term || '')
         })
       });
       if (!response.ok) throw new Error('Form service is not ready');
@@ -276,6 +310,8 @@
       status.className = 'form-message success';
       status.textContent = t.success;
       form.reset();
+      submissionId = crypto.randomUUID();
+      toggleServiceField();
     } catch (err) {
       status.className = 'form-message error';
       status.textContent = t.failed;
