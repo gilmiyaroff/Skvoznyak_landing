@@ -310,3 +310,35 @@
  .hero-mobile-screen-link:hover{color:#b7ffe1;border-bottom-color:#b7ffe1}
  .hero-mobile-screen-link:focus-visible{outline:2px solid #82f3cc;outline-offset:5px}
 }
+
+
+/* Scroll reveal animations — opacity + small vertical travel, no layout shifts.
+   html.has-scroll-reveal is added only after IntersectionObserver initialization. */
+@media(prefers-reduced-motion:no-preference){
+ html.has-scroll-reveal .reveal-item{
+   opacity:0;
+   transform:translate3d(0,18px,0);
+   transition-property:opacity,transform;
+   transition-duration:680ms,720ms;
+   transition-timing-function:cubic-bezier(.22,1,.36,1);
+   transition-delay:var(--reveal-delay,0ms);
+ }
+ html.has-scroll-reveal .reveal-item.is-visible{
+   opacity:1;
+   transform:translate3d(0,0,0);
+ }
+ @media(max-width:760px){
+   html.has-scroll-reveal .reveal-item{
+     transform:translate3d(0,12px,0);
+     transition-duration:520ms,570ms;
+   }
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ html.has-scroll-reveal .reveal-item{opacity:1!important;transform:none!important;transition:none!important}
+}
+@media print{
+ html.has-scroll-reveal .reveal-item{opacity:1!important;transform:none!important}
+}
+/* Give anchored sections breathing room beneath the sticky header. */
+main section[id]{scroll-margin-top:90px}
