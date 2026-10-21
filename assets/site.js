@@ -82,6 +82,60 @@
     screenDialog?.addEventListener('click', e => { if (e.target === screenDialog) screenDialog.close(); });
   }
 
+  // Scroll reveals for main landing pages. Disabled when reduced motion is requested.
+  // Content stays visible when JavaScript/IntersectionObserver is unavailable.
+  const hasLandingSections = document.querySelector('.section-features') && document.querySelector('.product-showcase');
+  const prefersReducedMotion = typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (hasLandingSections && !prefersReducedMotion && 'IntersectionObserver' in window) {
+    const selectors = [
+      '.section .eyebrow',
+      '.section h2',
+      '.section .section-lead',
+      '.problem-card',
+      '.flow-step',
+      '.feature-card',
+      '.timeline-top',
+      '.timeline-event',
+      '.screen-switcher',
+      '.screen-stage',
+      '.screen-description',
+      '.quote-panel .button',
+      '.faq-list details',
+      '.cta-points li',
+      '.lead-form'
+    ];
+    const elements = [...document.querySelectorAll(selectors.join(', '))];
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        currentObserver.unobserve(entry.target); // Animate once; no flicker on scroll back.
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -7% 0px' });
+
+    // Short stagger across rows and headings without changing the document flow.
+    document.querySelectorAll('.problem-grid, .flow, .features-grid, .faq-list, .cta-points, .timeline').forEach(group => {
+      [...group.children].forEach((item, index) => {
+        item.style.setProperty('--reveal-delay', Math.min(index % 3, 2) * 75 + 'ms');
+      });
+    });
+    elements.forEach(element => {
+      if (element.matches('.section h2')) element.style.setProperty('--reveal-delay', '65ms');
+      if (element.matches('.section .section-lead')) element.style.setProperty('--reveal-delay', '115ms');
+      if (element.matches('.screen-stage, .lead-form')) element.style.setProperty('--reveal-delay', '90ms');
+      element.classList.add('reveal-item');
+      const rect = element.getBoundingClientRect();
+      // Do not make elements already on screen disappear during initialization.
+      if (rect.top < window.innerHeight * 0.93 && rect.bottom > 0) {
+        element.classList.add('is-visible');
+      } else {
+        observer.observe(element);
+      }
+    });
+    document.documentElement.classList.add('has-scroll-reveal');
+  }
+
   const form = document.querySelector('[data-lead-form]');
   if (!form) return;
   const status = form.querySelector('[data-form-status]');
