@@ -9,3 +9,29 @@
 
 /assets/site.js
   Cache-Control: public, max-age=0, must-revalidate
+
+# ChatGPT Ads landing pages are documents, not downloads.
+# Covers canonical extensionless URLs and directory variants.
+/gptads
+  Content-Type: text/html; charset=utf-8
+  Content-Disposition: inline
+
+/gptads/*
+  Content-Type: text/html; charset=utf-8
+  Content-Disposition: inline
+
+/ru/gptads
+  Content-Type: text/html; charset=utf-8
+  Content-Disposition: inline
+
+/ru/gptads/*
+  Content-Type: text/html; charset=utf-8
+  Content-Disposition: inline
+
+/en/gptads
+  Content-Type: text/html; charset=utf-8
+  Content-Disposition: inline
+
+/en/gptads/*
+  Content-Type: text/html; charset=utf-8
+  Content-Disposition: inline
