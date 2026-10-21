@@ -94,3 +94,9 @@ python3 -m http.server 8000
 ## Группировка облака интеграций и GA4/Wazzup
 
 Основной лендинг на казахском, русском и английском языке содержит 15 сервисов в группах: реклама (Meta Ads, Google Ads); медиа (YouTube, TikTok, Instagram, Telegram); CRM и коммуникации (amoCRM, Bitrix24, WhatsApp, Wazzup, Sipuni, Kelesu); сайты и аналитика (Tilda, Google Analytics 4, Google Sheets). GA4 использует локальный SVG-знак. Wazzup пока отображается текстовым бренд-бейджем. Анимации отключаются при настройке reduced motion. На сайте указано, что доступность коннекторов определяется отдельно.
+
+## Рекламные каналы и веб-аналитика: октябрь 2026
+
+В основном KZ/RU/EN лендинге сбалансированы четыре рекламных бейджа (Meta Ads, Google Ads, YouTube Ads, TikTok Ads) и четыре бейджа сайтов/аналитики (Tilda, GA4, Google Sheets, Google Search Console). YouTube Ads — отдельная рекламная площадка для визуализации, но рекламные кампании и статистика управляются через Google Ads, а не через самостоятельный YouTube Ads API. YouTube как медиа/органика отображается отдельно. TikTok Ads не дублирует органическую TikTok-статистику.
+
+Google Search Console показан как запланированный источник SEO-данных: impressions, clicks, CTR, position, pages и queries через read-only Search Analytics API. Визуализация **не означает**, что API-интеграция уже реализована. SVG для Search Console хранится локально в assets/integration-icons.svg. Существующая анимация однократного появления без непрерывного движения сохраняется.
