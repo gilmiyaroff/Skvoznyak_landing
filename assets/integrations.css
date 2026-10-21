@@ -301,3 +301,21 @@
     font-size: 8.5px;
   }
 }
+
+/* Keep each connector status below its name at every breakpoint. */
+.integration-groups .integration-status-row {
+  display: block;
+  flex: 0 0 100%;
+  padding-left: 45px;
+  min-width: 0;
+}
+.integration-groups .integration-status-row .integration-status {
+  margin-left: 0;
+  max-width: 100%;
+}
+@media(max-width:680px) {
+  .integration-groups .integration-status-row { padding-left: 40px; }
+}
+@media(max-width:350px) {
+  .integration-groups .integration-status-row { padding-left: 36px; }
+}
