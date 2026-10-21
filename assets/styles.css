@@ -5,6 +5,23 @@
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 
 
+
+/* Header emblem: crop the circular symbol from the existing SKVOZNYAK logo.
+   Original transparent WebP (600x341) is shared with the landing page,
+   so the mark stays consistent without introducing a replacement logo. */
+.logo-mark{
+  display:inline-block;
+  width:35px;
+  height:35px;
+  flex:0 0 35px;
+  border-radius:50%;
+  background-image:url("./skvoznyak-logo.webp");
+  background-repeat:no-repeat;
+  background-size:86px auto;
+  background-position:center -2px;
+}
+.logo{white-space:nowrap}
+
 /* Multilingual switcher: locale codes, never flag icons. */
 .language-switch{display:inline-flex;align-items:center;flex-shrink:0;gap:2px;padding:4px;border:1px solid rgba(210,230,248,.20);border-radius:11px;background:rgba(255,255,255,.045)}
 .locale-link{display:inline-flex;align-items:center;justify-content:center;min-width:36px;min-height:30px;padding:4px 8px;border-radius:7px;color:#acc2d6;font-size:12px;font-weight:800;letter-spacing:.025em;transition:background .18s,color .18s}
@@ -21,7 +38,7 @@
  .topbar-inner{gap:7px}
  .nav-right{gap:7px}
  .logo{font-size:13px;letter-spacing:0;gap:6px}
- .logo .dash-brand{width:23px;height:23px;font-size:12px}
+ .logo-mark{width:28px;height:28px;flex-basis:28px;background-size:68px auto;background-position:center -1.5px}
  .language-switch{padding:3px;gap:0}
  .locale-link{min-width:32px;min-height:29px;padding:3px 5px;font-size:11px}
  .mobile-menu-btn{padding:7px}
