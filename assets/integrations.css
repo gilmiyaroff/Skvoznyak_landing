@@ -167,3 +167,38 @@
 .integration-chip--googlesearchconsole{--brand:#62bcf3;--badge-bg:rgba(76,159,224,.13)}
 /* Keep longer connector names readable in the two-column phone grid */
 .integration-group__grid .integration-chip__name{white-space:normal;overflow-wrap:break-word}
+
+/* Optional custom data-source inquiry fills the third row of Web & Analytics.
+   A real CTA, not a fictitious connector or feature commitment. */
+.integration-groups .integration-request{
+  grid-column:1/-1;
+  display:flex;align-items:center;gap:12px;
+  min-height:72px;padding:11px 14px;
+  color:#e5f8f2;text-decoration:none;
+  background:linear-gradient(115deg,rgba(34,106,100,.24),rgba(13,44,59,.86));
+  border:1px dashed rgba(108,221,186,.45);border-radius:13px;
+  transition:background-color .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+.integration-groups .integration-request:hover,
+.integration-groups .integration-request:focus-visible{
+  border-style:solid;border-color:#66e5c1;
+  background:rgba(26,93,89,.42);box-shadow:0 0 0 2px rgba(101,222,184,.09);
+}
+.integration-groups .integration-request:focus-visible{outline:2px solid #67e4bf;outline-offset:3px}
+.integration-request__plus{
+  display:grid;place-items:center;flex:0 0 37px;width:37px;height:37px;
+  border-radius:10px;background:rgba(76,212,168,.13);color:#7cf0c8;
+  font-size:25px;font-weight:400;line-height:1;
+}
+.integration-request__copy{display:flex;flex-direction:column;min-width:0;gap:3px}
+.integration-request__copy strong{color:#ddfdf1;font-size:14px;font-weight:800;line-height:1.23}
+.integration-request__copy small{font-size:12px;line-height:1.4;color:#a4c9c9}
+.integration-request__arrow{font-size:21px;font-weight:600;color:#7becc6;margin-left:auto;flex:0 0 auto}
+@media(max-width:680px){
+ .integration-groups .integration-request{min-height:70px;gap:9px;padding:10px}
+ .integration-request__plus{width:33px;height:33px;flex-basis:33px}
+ .integration-request__copy strong{font-size:12.5px}
+ .integration-request__copy small{font-size:11px}
+ .integration-request__arrow{font-size:18px}
+}
+@media(prefers-reduced-motion:reduce){.integration-groups .integration-request{transition:none!important}}
