@@ -327,11 +327,11 @@
    opacity:1;
    transform:translate3d(0,0,0);
  }
- @media(max-width:760px){
-   html.has-scroll-reveal .reveal-item{
-     transform:translate3d(0,12px,0);
-     transition-duration:520ms,570ms;
-   }
+}
+@media (prefers-reduced-motion:no-preference) and (max-width:760px){
+ html.has-scroll-reveal .reveal-item{
+   transform:translate3d(0,12px,0);
+   transition-duration:520ms,570ms;
  }
 }
 @media(prefers-reduced-motion:reduce){
