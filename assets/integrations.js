@@ -1,47 +1,24 @@
-/* Visible on-scroll reveal and a restrained parallax for the integrations grid. */
+/* SKVOZNYAK integration groups — one-shot reveal, then remain still. */
 (() => {
   const scene = document.querySelector('[data-integrations-scene]');
-  if (!scene) return;
+  if (!scene || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const groups = Array.from(scene.querySelectorAll('[data-integration-group]'));
-  const chips = Array.from(scene.querySelectorAll('[data-integration-item]'));
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (reduced.matches) return;
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    }), { threshold: 0.05, rootMargin: '0px 0px 48px 0px' });
-    scene.classList.add('integration-motion-enabled');
-    groups.forEach(group => observer.observe(group));
-  }
-  let scheduled = false;
-  const update = () => {
-    scheduled = false;
-    if (reduced.matches) return;
-    const r = scene.getBoundingClientRect();
-    const vh = window.innerHeight || document.documentElement.clientHeight;
-    if (r.bottom < -100 || r.top > vh + 100) return;
-    const progress = Math.max(-1, Math.min(1, (vh / 2 - r.top - r.height / 2) / Math.max(vh, r.height)));
-    const mobile = window.matchMedia('(max-width: 680px)').matches;
-    chips.forEach((chip, i) => {
-      chip.style.setProperty('--scroll-shift', Math.round(progress * (mobile ? 4 : 14) * (i % 2 ? -1 : 1)) + 'px');
+  if (!groups.length) return;
+
+  groups.forEach(group => {
+    group.querySelectorAll('.integration-chip__inner').forEach((chip, index) => {
+      chip.style.setProperty('--reveal-delay', (80 + index * 85) + 'ms');
     });
-    scene.style.setProperty('--glow-shift', Math.round(progress * 22) + 'px');
-  };
-  const schedule = () => {
-    if (scheduled) return;
-    scheduled = true;
-    window.requestAnimationFrame(update);
-  };
-  window.addEventListener('scroll', schedule, { passive: true });
-  window.addEventListener('resize', schedule, { passive: true });
-  reduced.addEventListener?.('change', () => {
-    if (reduced.matches) {
-      groups.forEach(group => group.classList.add('is-visible'));
-      chips.forEach(chip => chip.style.removeProperty('--scroll-shift'));
-    } else schedule();
   });
-  schedule();
+
+  scene.classList.add('integration-motion-enabled');
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  }, { threshold: 0.08, rootMargin: '0px 0px 40px 0px' });
+  groups.forEach(group => observer.observe(group));
 })();
