@@ -374,3 +374,46 @@ body{letter-spacing:0;text-rendering:optimizeLegibility}
   .section h2{font-size:clamp(29px,8.2vw,34px)}
   .hero-desc{font-size:16px}
 }
+
+/* Accessibility and planned proof/pilot sections (2026-10-22) */
+[hidden] { display: none !important; }
+.honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  top: auto;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  clip-path: inset(50%);
+}
+.pilot-price-note {
+  margin-top: 15px !important;
+  font-size: 15px !important;
+  color: #91e5c9 !important;
+  font-weight: 750;
+}
+.pilot-cases-section { background: #071a2a; }
+.pilot-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 25px;
+}
+.pilot-case {
+  padding: 25px;
+  background: #112b3e;
+  border: 1px solid #305067;
+  border-radius: 18px;
+  color: #e9f3f9;
+}
+.pilot-case h3 { margin: 0 0 18px; font-size: 22px; }
+.pilot-case dl { margin: 0; display: grid; gap: 13px; }
+.pilot-case dl div { display: grid; gap: 5px; }
+.pilot-case dt { color: #8fbdc8; font-size: 12px; }
+.pilot-case dd { margin: 0; font-size: 15px; overflow-wrap: anywhere; }
+@media(max-width: 680px){
+  .pilot-cases-grid { grid-template-columns: 1fr; }
+  .pilot-case { padding: 19px; }
+}
