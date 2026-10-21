@@ -39,6 +39,7 @@
           name: String(data.get('name') || '').trim(),
           phone,
           company: String(data.get('company') || '').trim(),
+          consent: data.get('consent') === 'on',
           interest: String(data.get('interest') || ''),
           website: String(data.get('website') || ''),
           locale: document.documentElement.lang,
