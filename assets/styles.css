@@ -96,3 +96,71 @@
  .logo-mark.hero-identity-mark{width:44px;height:44px;flex:0 0 44px;background-size:108px auto;background-position:center -2.3px}
  .hero-identity-name{font-size:19px}
 }
+
+
+/* Product UI previews: screenshots are authored SVGs, with crisp scalable text. */
+.hero-product-preview{
+  display:block;position:relative;min-width:0;overflow:hidden;
+  border:1px solid #34586B;border-radius:18px;
+  background:#091722;box-shadow:0 34px 92px rgba(0,0,0,.42),0 0 65px rgba(48,204,179,.08);
+  transform:perspective(1400px) rotateY(-4deg) rotateX(1deg);
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+.hero-product-preview:hover{transform:perspective(1400px) rotateY(0deg) translateY(-4px);border-color:#44CCAD;box-shadow:0 42px 100px rgba(0,0,0,.48),0 0 70px rgba(48,204,179,.17)}
+.hero-product-preview:focus-visible{outline:3px solid #6AE5B7;outline-offset:5px}
+.hero-preview-top{height:37px;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 14px;background:#0E2131;border-bottom:1px solid #274050;color:#99BACF;font-size:10px;letter-spacing:.025em}
+.hero-preview-dots{color:#4FDDB0;letter-spacing:3px}
+.hero-preview-badge{border:1px solid #286B5F;border-radius:6px;padding:2px 7px;color:#6AEBB4;font-weight:800}
+.hero-product-preview img{width:100%;height:auto;display:block;aspect-ratio:1672/941;object-fit:cover}
+.hero-preview-link{display:flex;justify-content:space-between;align-items:center;color:#CBF5E8;background:#0F2837;border-top:1px solid #2C4C59;padding:11px 15px;font-size:12px;font-weight:750}
+.hero-preview-link span{font-size:18px;color:#62E9B8}
+.product-showcase{background:radial-gradient(ellipse at 75% 11%,rgba(33,142,144,.18),transparent 50%),#081827;color:#F2F7FA}
+.product-showcase .section-lead{max-width:760px;margin-bottom:0;color:#A9C3D6}
+.showcase-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:29px}
+.showcase-heading h2{max-width:880px}
+.showcase-pill{display:inline-flex;align-items:center;gap:10px;border:1px solid #28564F;border-radius:100px;padding:9px 13px;background:#0C332F;color:#A7EAD0;font-size:11px;letter-spacing:.04em;white-space:nowrap}
+.screen-switcher{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:15px}
+.screen-tab{appearance:none;border:1px solid #2B4958;background:#0D2231;color:#AEC6D7;font-weight:700;border-radius:10px;padding:12px 19px;font-size:13px;line-height:1.25;transition:border-color .2s,background .2s,color .2s}
+.screen-tab:hover{border-color:#58BEAC;color:white}
+.screen-tab.is-active{border-color:#54DDB5;background:#123F37;color:#9AF5D4;box-shadow:inset 0 -2px 0 #46DBAC}
+.screen-tab:focus-visible,.screen-zoom:focus-visible,.screen-dialog-close:focus-visible{outline:2px solid #8EFFD6;outline-offset:3px}
+.screen-stage{border:1px solid #315267;border-radius:17px;background:#07131C;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.3),0 0 0 7px rgba(76,162,165,.035)}
+.screen-browser-bar{height:44px;padding:0 15px;display:flex;gap:15px;align-items:center;justify-content:space-between;background:linear-gradient(90deg,#112B39,#0D202D);border-bottom:1px solid #2A4656}
+.screen-dots{display:inline-flex;gap:6px;flex:0 0 46px}
+.screen-dots i{display:block;width:9px;height:9px;border-radius:50%;background:#435F6E}
+.screen-dots i:first-child{background:#E46D68}.screen-dots i:nth-child(2){background:#E6AF53}.screen-dots i:last-child{background:#4FD5A0}
+.screen-browser-url{color:#8FAFC2;border:1px solid #284353;border-radius:7px;background:#0A1E2B;padding:5px 13px;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:70%}
+.screen-browser-url span{color:#BDD5E4}
+.screen-zoom{display:inline-flex;align-items:center;gap:8px;background:#133D38;color:#A4F3D5;border:1px solid #2D7769;border-radius:8px;padding:6px 10px;cursor:pointer;font-weight:750;font-size:11px;white-space:nowrap}
+.screen-zoom:hover{background:#1C564C}
+.screen-zoom span:first-child{font-size:17px;line-height:1}
+.screen-image{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:contain;background:#07131C}
+.screen-description{display:flex;align-items:start;justify-content:space-between;gap:24px;padding-top:16px;color:#9BB5CA;font-size:12px}
+.screen-description>div{display:inline-flex;align-items:center;gap:9px;color:#DCF1E9;font-weight:750}
+.screen-caption-dot{display:block;background:#4BE1B0;width:7px;height:7px;border-radius:50%;box-shadow:0 0 0 4px rgba(66,215,171,.12)}
+.screen-description>span{max-width:550px;text-align:right}
+.screen-dialog{width:min(96vw,1600px);max-width:none;max-height:94dvh;margin:auto;padding:0;overflow:hidden;color:#EAF5FF;border:1px solid #31586C;border-radius:15px;background:#081823;box-shadow:0 35px 140px #000}
+.screen-dialog::backdrop{background:rgba(1,8,14,.86);backdrop-filter:blur(8px)}
+.screen-dialog-head{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 17px;border-bottom:1px solid #254556;background:#102A39;font-size:13px;letter-spacing:.06em}
+.screen-dialog-close{cursor:pointer;background:transparent;border:1px solid #456678;border-radius:7px;color:#D0E7F6;width:32px;height:30px}
+.screen-dialog-close:hover{background:#234150}
+.screen-dialog-scroll{overflow:auto;max-height:calc(94dvh - 48px)}
+.screen-dialog-scroll img{display:block;width:100%;height:auto;min-width:900px;max-width:none}
+@media(max-width:1040px){.hero-product-preview{transform:none;max-width:100%}.hero-product-preview:hover{transform:translateY(-3px)}}
+@media(max-width:760px){
+ .showcase-heading{display:block;margin-bottom:25px}
+ .showcase-heading h2{font-size:34px}
+ .showcase-pill{margin-top:18px}
+ .screen-switcher{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+ .screen-tab{padding:11px 9px;font-size:12px;text-align:center;white-space:normal}
+ .screen-browser-bar{height:40px;padding:0 9px;gap:7px}
+ .screen-dots{flex-basis:26px;gap:3px}
+ .screen-dots i{width:6px;height:6px}
+ .screen-browser-url{font-size:9px;max-width:58%;padding:5px}
+ .screen-zoom{padding:5px 8px}
+ .screen-zoom span:last-child{display:none}
+ .screen-description{display:block;font-size:11px}
+ .screen-description>span{display:block;max-width:100%;margin-top:7px;text-align:left}
+ .hero-preview-top{padding:0 10px}
+}
+@media(prefers-reduced-motion:reduce){.hero-product-preview{transition:none}}
