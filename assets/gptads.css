@@ -58,3 +58,21 @@
 @media(max-width:1050px){.gpt-hero-grid{grid-template-columns:1fr;gap:34px}.gpt-chat{max-width:660px;width:100%;margin-inline:auto;transform:none}.gpt-faq-layout{grid-template-columns:1fr;gap:15px}}
 @media(max-width:770px){.gpt-hero{padding:56px 0 72px}.gpt-benefit-grid,.gpt-service-grid{grid-template-columns:1fr}.gpt-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.gpt-quote{display:block;padding:30px}.gpt-quote .button{margin-top:26px}.gpt-contact .cta-grid{grid-template-columns:1fr}.gpt-chat-body{padding:18px}}
 @media(max-width:480px){.gpt-hero h1{font-size:clamp(37px,10vw,49px)}.gpt-hero .hero-desc{font-size:16px}.gpt-steps{grid-template-columns:1fr}.gpt-step{min-height:0;gap:12px}.gpt-benefit,.gpt-service{padding:22px}.gpt-chat-top{padding:14px 16px}.gpt-quote{padding:25px 21px}.gpt-chat{border-radius:17px}}
+
+/* Pilot budget and fixed managed-service offer */
+.gpt-budget-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.gpt-budget-card{padding:28px 26px;min-width:0;border:1px solid #d1e2eb;border-radius:18px;background:#fff;display:flex;flex-direction:column;align-items:flex-start}
+.gpt-budget-card.is-focus{background:#e4f8f3;border-color:#6bcdb3;box-shadow:0 16px 35px rgba(10,110,94,.06)}
+.gpt-budget-value{font-size:clamp(36px,4.5vw,56px);font-weight:900;letter-spacing:-.065em;line-height:1.1;color:#0b2635}
+.gpt-budget-term{font-size:14px;font-weight:800;color:#177e84;margin-top:11px}
+.gpt-budget-card p{margin:14px 0 0;font-size:14px;color:#597083}
+.gpt-budget-under{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.gpt-budget-under>p{font-size:14px;color:#506679;line-height:1.75;margin:0}
+.gpt-budget-under a,.gpt-audience a{color:#087d89;text-decoration:underline;text-underline-offset:3px}
+.gpt-pilot-example{border-left:3px solid #38b3a3;padding-left:17px}
+.gpt-pilot-example h3{margin:0 0 7px;color:#183446;font-size:17px}
+.gpt-pilot-example p{margin:0;font-size:14px;line-height:1.65;color:#536b7d}
+.gpt-audience{margin:25px 0 0;border-top:1px solid #d5e2ea;padding-top:18px;font-size:13px;color:#536d7e}
+.gpt-fee .gpt-quote{border-color:#69e6bb;background:radial-gradient(circle at 98% 10%,rgba(71,209,165,.15),transparent 45%),#0b2636}
+.gpt-fee .gpt-quote h2{font-size:clamp(36px,4.8vw,62px);letter-spacing:-.06em;line-height:1.1;color:#e9fff8}
+@media(max-width:770px){.gpt-budget-cards{grid-template-columns:1fr}.gpt-budget-card{padding:23px}.gpt-budget-under{grid-template-columns:1fr;gap:21px}.gpt-fee .gpt-quote h2{font-size:clamp(36px,9vw,50px)}}
