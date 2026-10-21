@@ -82,3 +82,11 @@ python3 -m http.server 8000
 - `assets/gptads.css` и `assets/site.js` — общие технические ресурсы, но страницу GPT Ads можно открывать без посещения главной.
 
 **Важно для Cloudflare Pages:** подключение репозитория само по себе не гарантирует, что сайт получил последнюю версию. При 404 после изменения `main` проверьте Production Deployment и branch `main` в Cloudflare → Workers & Pages → Deployments. Убедитесь, что свежий deployment включает `gptads/ru/index.html`, `gptads/en/index.html` и обновлённый `sitemap.xml`. Не публикуйте сквозь Github Pages и не заменяйте DNS существующего сайта.
+
+## Визуальное облако интеграций
+
+- `index.html`, `ru/index.html`, `en/index.html`: строка сервисов заменена на адаптивный блок с 13 источниками.
+- `assets/integration-icons.svg`: локальный SVG-спрайт узнаваемых логотипов (из Simple Icons); у остальных сервисов используются текстовые бренд-бейджи вместо непроверенных логотипов.
+- `assets/integrations.css`, `assets/integrations.js`: стили, анимация и лёгкий parallax на scroll, без тяжёлых библиотек.
+- На небольших экранах — компактная сетка; `prefers-reduced-motion` отключает анимацию.
+- Бейджи иллюстрируют целевую экосистему, а не гарантируют готовность всех API-интеграций. Доступность указывается под блоком.
