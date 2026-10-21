@@ -16,9 +16,12 @@
   // keep navigation inside the preview deployment rather than jumping to production.
   const isPreview = !/^(?:www\.)?skvoznyak\.(?:kz|com)$/i.test(location.hostname);
   const inPrivacy = /^\/(?:en\/|ru\/)?privacy\/?(?:index\.html)?$/.test(location.pathname);
+  const inGptAds = /^\/(?:en\/|ru\/)?gptads\/?(?:index\.html)?$/.test(location.pathname);
   const localePaths = inPrivacy
     ? { kk: '/privacy/', ru: '/ru/privacy/', en: '/en/privacy/' }
-    : { kk: '/', ru: '/ru/', en: '/en/' };
+    : inGptAds
+      ? { kk: '/gptads/', ru: '/ru/gptads/', en: '/en/gptads/' }
+      : { kk: '/', ru: '/ru/', en: '/en/' };
   document.querySelectorAll('.language-switch a').forEach(link => {
     const target = link.getAttribute('lang');
     if (isPreview && localePaths[target]) link.href = localePaths[target];
