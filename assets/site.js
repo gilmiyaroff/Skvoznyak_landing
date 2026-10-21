@@ -136,6 +136,86 @@
     document.documentElement.classList.add('has-scroll-reveal');
   }
 
+
+  // GPT Ads reveal and intro animations — isolated from the SKVOZNYAK main landing.
+  // Progressive enhancement: no hidden content when JS or IntersectionObserver is unavailable.
+  if (document.body.classList.contains('gpt-page') &&
+      !prefersReducedMotion && 'IntersectionObserver' in window) {
+    const introTargets = [
+      '.gpt-hero .gpt-pill',
+      '.gpt-hero h1',
+      '.gpt-hero .hero-desc',
+      '.gpt-hero .hero-actions',
+      '.gpt-hero .gpt-mini-benefits',
+      '.gpt-hero-grid > div:last-child'
+    ];
+    introTargets.forEach((selector, index) => {
+      const item = document.querySelector(selector);
+      if (!item) return;
+      item.style.setProperty('--gpt-delay', (index * 90 + 60) + 'ms');
+      item.classList.add('gpt-intro-item');
+    });
+
+    const gptRevealSelectors = [
+      '#benefits .gpt-section-heading > *',
+      '#benefits .gpt-benefit',
+      '#service .gpt-section-heading > *',
+      '#service .gpt-service',
+      '#steps .gpt-section-heading > *',
+      '#steps .gpt-step',
+      '#budget .gpt-section-heading > *',
+      '#budget .gpt-budget-card',
+      '#budget .gpt-budget-under > *',
+      '#budget .gpt-audience',
+      '.gpt-fee .gpt-quote',
+      '.gpt-faq-layout > div:first-child > *',
+      '.gpt-faq details',
+      '.gpt-contact .cta-intro > *',
+      '.gpt-contact .lead-form'
+    ];
+    const targets = [...document.querySelectorAll(gptRevealSelectors.join(', '))];
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add('gpt-is-visible');
+        observer.unobserve(entry.target);
+      }
+    }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+
+    const staggerGroups = [
+      '.gpt-benefit-grid',
+      '.gpt-service-grid',
+      '.gpt-steps',
+      '.gpt-budget-cards',
+      '.gpt-faq-layout',
+      '.gpt-contact .cta-points'
+    ];
+    staggerGroups.forEach(selector => {
+      const group = document.querySelector(selector);
+      if (!group) return;
+      [...group.children].forEach((item, index) => {
+        item.style.setProperty('--gpt-reveal-delay', (index % 4) * 85 + 'ms');
+      });
+    });
+
+    for (const element of targets) {
+      if (element.matches('.gpt-section-heading h2, .gpt-faq-layout h2')) {
+        element.style.setProperty('--gpt-reveal-delay', '65ms');
+      } else if (element.matches('.gpt-section-heading .section-lead')) {
+        element.style.setProperty('--gpt-reveal-delay', '120ms');
+      }
+      const rect = element.getBoundingClientRect();
+      element.classList.add('gpt-reveal-item');
+      // Anything already on screen must never flash from visible to hidden.
+      if (rect.top <= window.innerHeight * 0.94 && rect.bottom >= 0) {
+        element.classList.add('gpt-is-visible');
+      } else {
+        revealObserver.observe(element);
+      }
+    }
+    document.body.classList.add('has-gpt-motion');
+  }
+
   const form = document.querySelector('[data-lead-form]');
   if (!form) return;
   const status = form.querySelector('[data-form-status]');
