@@ -3,7 +3,7 @@
 .gpt-hero{position:relative;overflow:hidden;background:radial-gradient(circle at 80% 22%,rgba(45,208,194,.17),transparent 33%),linear-gradient(150deg,#071323,#0c2236);padding:94px 0 106px}
 .gpt-hero:before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(128,184,224,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(128,184,224,.055) 1px,transparent 1px);background-size:68px 68px;mask-image:linear-gradient(90deg,transparent,#000)}
 .gpt-hero-grid{position:relative;display:grid;grid-template-columns:1.06fr .94fr;align-items:center;gap:58px}
-.gpt-hero h1{font-size:clamp(44px,5.6vw,76px);letter-spacing:-.065em;line-height:1.035;margin:23px 0 26px}
+.gpt-hero h1{font-size:clamp(42px,5.1vw,70px);letter-spacing:-.014em;line-height:1.14;font-weight:800;margin:23px 0 26px}
 .gpt-hero .hero-desc{max-width:640px;font-size:18px;line-height:1.65}
 .gpt-hero .hero-actions{margin-top:31px}
 .gpt-pill{display:inline-flex;align-items:center;gap:9px;padding:9px 15px;border-radius:999px;border:1px solid rgba(91,228,170,.32);color:#a4edd1;background:rgba(91,228,170,.08);font-size:12px;font-weight:750}
@@ -21,7 +21,7 @@
 .gpt-sponsor-content{padding:19px}
 .gpt-brand{display:flex;align-items:center;gap:10px;font-size:12px;color:#bdd2e0}
 .gpt-brand-logo{display:grid;place-items:center;background:#75d9bb;color:#09283a;width:30px;height:30px;border-radius:8px;font-weight:950}
-.gpt-sponsor h3{font-size:21px;letter-spacing:-.03em;margin:15px 0 6px;color:#fff}
+.gpt-sponsor h3{font-size:21px;letter-spacing:0;line-height:1.3;font-weight:700;margin:15px 0 6px;color:#fff}
 .gpt-sponsor p{font-size:13px;margin:0 0 16px;color:#b7cddd}
 .gpt-sponsor-action{color:#6be9bb;font-size:13px;font-weight:850}
 .gpt-mock-note{color:#90abc0;font-size:11px;text-align:center;margin:13px 12px 0;line-height:1.6}
@@ -30,19 +30,19 @@
 .gpt-benefit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
 .gpt-benefit{padding:28px;border:1px solid #d4e3eb;border-radius:18px;background:#fff;box-shadow:0 16px 26px rgba(3,30,51,.035)}
 .gpt-benefit-index{color:#23aeb4;font-weight:900;letter-spacing:.12em;font-size:12px}
-.gpt-benefit h3{color:#152b3e;letter-spacing:-.025em;font-size:21px;margin:24px 0 11px}
+.gpt-benefit h3{color:#152b3e;letter-spacing:0;line-height:1.32;font-size:21px;font-weight:700;margin:24px 0 11px}
 .gpt-benefit p{color:#596a79;margin:0;font-size:15px}
 .gpt-service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .gpt-service{padding:30px;border:1px solid #2b4658;background:linear-gradient(160deg,#0e2738,#0a1c2e);border-radius:18px}
 .gpt-service-number{font-size:13px;letter-spacing:.13em;color:#66e2b6;font-weight:900}
-.gpt-service h3{font-size:22px;letter-spacing:-.03em;margin:25px 0 8px}
+.gpt-service h3{font-size:22px;letter-spacing:0;line-height:1.33;font-weight:700;margin:25px 0 8px}
 .gpt-service p{color:#a9bfd2;margin:0}
 .gpt-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;counter-reset:process}
 .gpt-step{min-height:146px;padding:20px;border:1px solid #d3e4ed;border-radius:16px;background:#fff;display:flex;flex-direction:column;gap:24px}
 .gpt-step b{color:#299faa;font-size:12px;letter-spacing:.12em}
 .gpt-step strong{font-size:16px;color:#1d3446;line-height:1.4}
-.gpt-quote{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:40px;border:1px solid #2b5b5d;border-radius:23px;background:radial-gradient(circle at 100% 0%,rgba(65,216,163,.16),transparent 40%),#0d2836}
-.gpt-quote h2{margin:12px 0 14px;font-size:clamp(28px,4vw,43px)}
+.gpt-quote{display:flex;align-items:center;justify-content:space-between;gap:30px;min-width:0;padding:40px;border:1px solid #2b5b5d;border-radius:23px;background:radial-gradient(circle at 100% 0%,rgba(65,216,163,.16),transparent 40%),#0d2836}
+.gpt-quote h2{margin:12px 0 14px;font-size:clamp(28px,3.9vw,42px);line-height:1.22;letter-spacing:-.005em}
 .gpt-quote p{color:#b2c9d4;max-width:650px;margin:0}
 .gpt-quote .button{flex:none}
 .gpt-faq details{border:1px solid #2a465c;border-radius:14px;background:#0d2336;padding:20px 22px;margin:0 0 12px}
@@ -57,13 +57,13 @@
 .gpt-page .field input,.gpt-page .field select{min-width:0}
 @media(max-width:1050px){.gpt-hero-grid{grid-template-columns:1fr;gap:34px}.gpt-chat{max-width:660px;width:100%;margin-inline:auto;transform:none}.gpt-faq-layout{grid-template-columns:1fr;gap:15px}}
 @media(max-width:770px){.gpt-hero{padding:56px 0 72px}.gpt-benefit-grid,.gpt-service-grid{grid-template-columns:1fr}.gpt-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.gpt-quote{display:block;padding:30px}.gpt-quote .button{margin-top:26px}.gpt-contact .cta-grid{grid-template-columns:1fr}.gpt-chat-body{padding:18px}}
-@media(max-width:480px){.gpt-hero h1{font-size:clamp(37px,10vw,49px)}.gpt-hero .hero-desc{font-size:16px}.gpt-steps{grid-template-columns:1fr}.gpt-step{min-height:0;gap:12px}.gpt-benefit,.gpt-service{padding:22px}.gpt-chat-top{padding:14px 16px}.gpt-quote{padding:25px 21px}.gpt-chat{border-radius:17px}}
+@media(max-width:480px){.gpt-hero h1{font-size:clamp(35px,9.6vw,46px);line-height:1.16}.gpt-hero .hero-desc{font-size:16px}.gpt-steps{grid-template-columns:1fr}.gpt-step{min-height:0;gap:12px}.gpt-benefit,.gpt-service{padding:22px}.gpt-chat-top{padding:14px 16px}.gpt-quote{padding:25px 21px}.gpt-chat{border-radius:17px}}
 
 /* Pilot budget and fixed managed-service offer */
 .gpt-budget-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .gpt-budget-card{padding:28px 26px;min-width:0;border:1px solid #d1e2eb;border-radius:18px;background:#fff;display:flex;flex-direction:column;align-items:flex-start}
 .gpt-budget-card.is-focus{background:#e4f8f3;border-color:#6bcdb3;box-shadow:0 16px 35px rgba(10,110,94,.06)}
-.gpt-budget-value{font-size:clamp(36px,4.5vw,56px);font-weight:900;letter-spacing:-.065em;line-height:1.1;color:#0b2635}
+.gpt-budget-value{font-size:clamp(34px,4.1vw,52px);font-weight:800;letter-spacing:-.01em;line-height:1.18;color:#0b2635}
 .gpt-budget-term{font-size:14px;font-weight:800;color:#177e84;margin-top:11px}
 .gpt-budget-card p{margin:14px 0 0;font-size:14px;color:#597083}
 .gpt-budget-under{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
@@ -74,5 +74,67 @@
 .gpt-pilot-example p{margin:0;font-size:14px;line-height:1.65;color:#536b7d}
 .gpt-audience{margin:25px 0 0;border-top:1px solid #d5e2ea;padding-top:18px;font-size:13px;color:#536d7e}
 .gpt-fee .gpt-quote{border-color:#69e6bb;background:radial-gradient(circle at 98% 10%,rgba(71,209,165,.15),transparent 45%),#0b2636}
-.gpt-fee .gpt-quote h2{font-size:clamp(36px,4.8vw,62px);letter-spacing:-.06em;line-height:1.1;color:#e9fff8}
-@media(max-width:770px){.gpt-budget-cards{grid-template-columns:1fr}.gpt-budget-card{padding:23px}.gpt-budget-under{grid-template-columns:1fr;gap:21px}.gpt-fee .gpt-quote h2{font-size:clamp(36px,9vw,50px)}}
+.gpt-fee .gpt-quote h2{font-size:clamp(34px,4.4vw,56px);letter-spacing:-.005em;line-height:1.18;color:#e9fff8;font-weight:800}
+@media(max-width:770px){.gpt-budget-cards{grid-template-columns:1fr}.gpt-budget-card{padding:23px}.gpt-budget-under{grid-template-columns:1fr;gap:21px}.gpt-fee .gpt-quote h2{font-size:clamp(32px,8vw,44px)}}
+
+/* GPT Ads typography — shared legibility standard for kk, ru and en. */
+.gpt-page{font-kerning:normal;text-rendering:optimizeLegibility}
+.gpt-page h1,.gpt-page h2,.gpt-page h3{
+  font-kerning:normal;
+  hyphens:none;
+  overflow-wrap:break-word;
+  text-wrap:balance;
+}
+.gpt-page h2{line-height:1.19;letter-spacing:-.01em;font-weight:800}
+.gpt-page h3{line-height:1.33}
+.gpt-page p,.gpt-page .section-lead,.gpt-page .hero-desc{
+  line-height:1.65;
+  letter-spacing:.004em;
+}
+.gpt-hero-grid>*,
+.gpt-budget-card,
+.gpt-quote>*,
+.gpt-faq-layout>*,
+.gpt-benefit,
+.gpt-service,
+.gpt-step{min-width:0}
+.gpt-page .button{
+  font-size:15px;
+  line-height:1.4;
+  font-weight:700;
+  letter-spacing:.008em;
+  text-align:center;
+  white-space:normal;
+}
+.gpt-page .gpt-pill,.gpt-page .gpt-mini-benefits span{
+  line-height:1.5;
+  overflow-wrap:break-word;
+}
+.gpt-chat-top{line-height:1.5;letter-spacing:.01em}
+.gpt-chat-top b{letter-spacing:.06em}
+.gpt-you,.gpt-ai,.gpt-sponsor p{line-height:1.55}
+.gpt-sponsored-label,.gpt-budget-term,.gpt-service-number,.gpt-benefit-index{
+  letter-spacing:.035em;
+}
+.gpt-step strong{line-height:1.45;letter-spacing:0}
+.gpt-budget-value{overflow-wrap:normal;word-break:normal}
+.gpt-quote>div{flex:1 1 auto;min-width:0}
+.gpt-quote .button{max-width:100%;flex:0 1 auto}
+.gpt-faq summary{line-height:1.45;letter-spacing:0;font-weight:650}
+.gpt-fee .gpt-quote h2{text-wrap:wrap}
+@media(max-width:770px){
+ .gpt-hero h1{font-size:clamp(38px,7.5vw,53px);line-height:1.17}
+ .gpt-hero-grid{gap:30px}
+ .gpt-quote .button{width:100%}
+ .gpt-service h3,.gpt-benefit h3{font-size:20px}
+ .gpt-fee .gpt-quote h2{font-size:clamp(32px,7.8vw,44px)}
+}
+@media(max-width:480px){
+ .gpt-hero h1{font-size:clamp(34px,9.1vw,43px);letter-spacing:-.006em;line-height:1.18}
+ .gpt-hero .hero-desc{font-size:16px;line-height:1.62}
+ .gpt-chat-top{font-size:11px;gap:8px}
+ .gpt-chat-top b{letter-spacing:.035em}
+ .gpt-budget-value{font-size:clamp(33px,9vw,42px)}
+ .gpt-quote h2,.gpt-fee .gpt-quote h2{font-size:clamp(30px,8vw,37px);line-height:1.23}
+ .gpt-page .button{font-size:15px}
+}
