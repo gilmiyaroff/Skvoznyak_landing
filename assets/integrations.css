@@ -160,3 +160,10 @@
     opacity:1!important;transform:none!important;animation:none!important;transition:none!important;
   }
 }
+
+/* Four ad-channel badges and Google Search Console site analytics */
+.integration-chip--youtubeads{--brand:#ff5969;--badge-bg:rgba(255,53,82,.12)}
+.integration-chip--tiktokads{--brand:#fff;--badge-bg:rgba(123,231,229,.1)}
+.integration-chip--googlesearchconsole{--brand:#62bcf3;--badge-bg:rgba(76,159,224,.13)}
+/* Keep longer connector names readable in the two-column phone grid */
+.integration-group__grid .integration-chip__name{white-space:normal;overflow-wrap:break-word}
