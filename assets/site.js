@@ -15,7 +15,10 @@
   // Preserve the current section while switching locales. On Pages preview URLs,
   // keep navigation inside the preview deployment rather than jumping to production.
   const isPreview = !/^(?:www\.)?skvoznyak\.(?:kz|com)$/i.test(location.hostname);
-  const localePaths = { kk: '/kz/', ru: '/', en: '/en/' };
+  const inPrivacy = /^\/(?:en\/|kz\/)?privacy\/?(?:index\.html)?$/.test(location.pathname);
+  const localePaths = inPrivacy
+    ? { kk: '/kz/privacy/', ru: '/privacy/', en: '/en/privacy/' }
+    : { kk: '/kz/', ru: '/', en: '/en/' };
   document.querySelectorAll('.language-switch a').forEach(link => {
     const target = link.getAttribute('lang');
     if (isPreview && localePaths[target]) link.href = localePaths[target];
