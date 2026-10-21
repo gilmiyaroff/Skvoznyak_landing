@@ -239,3 +239,65 @@
     width:100%;
   }
 }
+
+/* Source-driven connector status labels; appended in integrations.js.
+ * All card states are currently "development" in integration-statuses.js.
+ */
+.integration-groups .integration-chip__inner {
+  flex-wrap: wrap;
+  align-content: center;
+  row-gap: 3px;
+}
+.integration-groups .integration-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  max-width: calc(100% - 45px);
+  margin-left: 45px;
+  padding: 3px 8px;
+  font-size: 10px;
+  line-height: 1.25;
+  font-weight: 760;
+  letter-spacing: .01em;
+  border-radius: 999px;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+.integration-status::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex: none;
+  background: currentColor;
+}
+.integration-status--development {
+  color: #b7c8d5;
+  background: rgba(155,176,195,.12);
+  border: 1px solid rgba(164,185,203,.22);
+}
+.integration-status--pilot {
+  color: #8aeac2;
+  background: rgba(55,193,144,.1);
+  border: 1px solid rgba(109,215,173,.35);
+}
+.integration-groups .integration-icon--generic {
+  fill: none;
+  color: inherit;
+}
+@media(max-width: 680px) {
+  .integration-groups .integration-status {
+    margin-left: 40px;
+    max-width: calc(100% - 40px);
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+}
+@media(max-width: 350px) {
+  .integration-groups .integration-status {
+    margin-left: 36px;
+    max-width: calc(100% - 36px);
+    font-size: 8.5px;
+  }
+}
