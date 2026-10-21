@@ -1,0 +1,60 @@
+
+/* Dedicated SKVOZNYAK ChatGPT Ads landing page; inherits shared tokens. */
+.gpt-hero{position:relative;overflow:hidden;background:radial-gradient(circle at 80% 22%,rgba(45,208,194,.17),transparent 33%),linear-gradient(150deg,#071323,#0c2236);padding:94px 0 106px}
+.gpt-hero:before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(128,184,224,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(128,184,224,.055) 1px,transparent 1px);background-size:68px 68px;mask-image:linear-gradient(90deg,transparent,#000)}
+.gpt-hero-grid{position:relative;display:grid;grid-template-columns:1.06fr .94fr;align-items:center;gap:58px}
+.gpt-hero h1{font-size:clamp(44px,5.6vw,76px);letter-spacing:-.065em;line-height:1.035;margin:23px 0 26px}
+.gpt-hero .hero-desc{max-width:640px;font-size:18px;line-height:1.65}
+.gpt-hero .hero-actions{margin-top:31px}
+.gpt-pill{display:inline-flex;align-items:center;gap:9px;padding:9px 15px;border-radius:999px;border:1px solid rgba(91,228,170,.32);color:#a4edd1;background:rgba(91,228,170,.08);font-size:12px;font-weight:750}
+.gpt-mini-benefits{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}
+.gpt-mini-benefits span{border:1px solid rgba(185,223,239,.18);background:rgba(255,255,255,.035);padding:7px 11px;border-radius:8px;color:#c3d3e2;font-size:12px}
+.gpt-chat{border:1px solid #284a5b;border-radius:23px;background:#0b1c2d;box-shadow:0 32px 100px rgba(0,0,0,.38);overflow:hidden;transform:rotate(1deg)}
+.gpt-chat-top{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#12293d;border-bottom:1px solid rgba(193,230,244,.11);padding:17px 21px;color:#aec9da;font-size:12px;letter-spacing:.035em}
+.gpt-chat-top b{color:#ecf8ff;letter-spacing:.14em}
+.gpt-chat-body{padding:25px 24px 23px}
+.gpt-you{background:#20354a;padding:15px 17px;border-radius:15px 15px 5px 15px;font-size:14px;color:#f1f7fb;max-width:88%;margin-left:auto}
+.gpt-ai{display:flex;gap:12px;align-items:flex-start;padding:21px 0 28px;color:#cadbeb;font-size:14px}
+.gpt-ai-mark{display:grid;place-items:center;width:29px;height:29px;flex:none;border:1px solid #4d7d83;border-radius:10px;background:#133d41;color:#69edb7;font-weight:900}
+.gpt-sponsor{border:1px solid #3a576d;border-radius:16px;background:linear-gradient(160deg,#152e44,#102637);overflow:hidden}
+.gpt-sponsored-label{background:#0a1a29;padding:8px 15px;font-size:10px;letter-spacing:.15em;color:#c5d5e4}
+.gpt-sponsor-content{padding:19px}
+.gpt-brand{display:flex;align-items:center;gap:10px;font-size:12px;color:#bdd2e0}
+.gpt-brand-logo{display:grid;place-items:center;background:#75d9bb;color:#09283a;width:30px;height:30px;border-radius:8px;font-weight:950}
+.gpt-sponsor h3{font-size:21px;letter-spacing:-.03em;margin:15px 0 6px;color:#fff}
+.gpt-sponsor p{font-size:13px;margin:0 0 16px;color:#b7cddd}
+.gpt-sponsor-action{color:#6be9bb;font-size:13px;font-weight:850}
+.gpt-mock-note{color:#90abc0;font-size:11px;text-align:center;margin:13px 12px 0;line-height:1.6}
+.gpt-section-heading{max-width:780px;margin-bottom:34px}
+.gpt-section-heading h2{max-width:770px}
+.gpt-benefit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.gpt-benefit{padding:28px;border:1px solid #d4e3eb;border-radius:18px;background:#fff;box-shadow:0 16px 26px rgba(3,30,51,.035)}
+.gpt-benefit-index{color:#23aeb4;font-weight:900;letter-spacing:.12em;font-size:12px}
+.gpt-benefit h3{color:#152b3e;letter-spacing:-.025em;font-size:21px;margin:24px 0 11px}
+.gpt-benefit p{color:#596a79;margin:0;font-size:15px}
+.gpt-service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.gpt-service{padding:30px;border:1px solid #2b4658;background:linear-gradient(160deg,#0e2738,#0a1c2e);border-radius:18px}
+.gpt-service-number{font-size:13px;letter-spacing:.13em;color:#66e2b6;font-weight:900}
+.gpt-service h3{font-size:22px;letter-spacing:-.03em;margin:25px 0 8px}
+.gpt-service p{color:#a9bfd2;margin:0}
+.gpt-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;counter-reset:process}
+.gpt-step{min-height:146px;padding:20px;border:1px solid #d3e4ed;border-radius:16px;background:#fff;display:flex;flex-direction:column;gap:24px}
+.gpt-step b{color:#299faa;font-size:12px;letter-spacing:.12em}
+.gpt-step strong{font-size:16px;color:#1d3446;line-height:1.4}
+.gpt-quote{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:40px;border:1px solid #2b5b5d;border-radius:23px;background:radial-gradient(circle at 100% 0%,rgba(65,216,163,.16),transparent 40%),#0d2836}
+.gpt-quote h2{margin:12px 0 14px;font-size:clamp(28px,4vw,43px)}
+.gpt-quote p{color:#b2c9d4;max-width:650px;margin:0}
+.gpt-quote .button{flex:none}
+.gpt-faq details{border:1px solid #2a465c;border-radius:14px;background:#0d2336;padding:20px 22px;margin:0 0 12px}
+.gpt-faq summary{cursor:pointer;font-size:16px;font-weight:760;list-style-position:inside}
+.gpt-faq details p{color:#b1c5d6;line-height:1.7;margin:14px 0 0}
+.gpt-faq-layout{display:grid;grid-template-columns:.68fr 1.32fr;gap:50px}
+.gpt-contact .cta-grid{align-items:start}
+.gpt-note-legal{font-size:12px;color:#9db4c5;margin-top:23px}
+.gpt-footer-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.gpt-footer-links a{font-size:13px}
+.gpt-page .lead-form h3{margin-top:0}
+.gpt-page .field input,.gpt-page .field select{min-width:0}
+@media(max-width:1050px){.gpt-hero-grid{grid-template-columns:1fr;gap:34px}.gpt-chat{max-width:660px;width:100%;margin-inline:auto;transform:none}.gpt-faq-layout{grid-template-columns:1fr;gap:15px}}
+@media(max-width:770px){.gpt-hero{padding:56px 0 72px}.gpt-benefit-grid,.gpt-service-grid{grid-template-columns:1fr}.gpt-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.gpt-quote{display:block;padding:30px}.gpt-quote .button{margin-top:26px}.gpt-contact .cta-grid{grid-template-columns:1fr}.gpt-chat-body{padding:18px}}
+@media(max-width:480px){.gpt-hero h1{font-size:clamp(37px,10vw,49px)}.gpt-hero .hero-desc{font-size:16px}.gpt-steps{grid-template-columns:1fr}.gpt-step{min-height:0;gap:12px}.gpt-benefit,.gpt-service{padding:22px}.gpt-chat-top{padding:14px 16px}.gpt-quote{padding:25px 21px}.gpt-chat{border-radius:17px}}
