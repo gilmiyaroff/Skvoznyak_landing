@@ -27,6 +27,7 @@ export async function onRequestPost({ request, env }) {
   try { body = await request.json(); } catch { return json({ ok: false }, 400); }
   if (!body || typeof body !== "object" || Array.isArray(body)) return json({ ok: false }, 400);
   if (body.website) return json({ ok: true }); // honeypot
+  if (body.consent !== true) return json({ ok: false, error: "Consent is required" }, 400);
   const name = clean(body.name, 120);
   const phone = clean(body.phone, 25);
   const company = clean(body.company, 120);
