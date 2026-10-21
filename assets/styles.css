@@ -63,3 +63,36 @@
   .flow-step{padding:11px 12px;min-height:80px}
   .flow-step strong{font-size:12px}
 }
+
+
+/* Transparent branded hero lockup. The icon is cropped from the
+   existing transparent SKVOZNYAK WebP, with no white/card backing. */
+.hero-identity{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin:0 0 22px;
+}
+.logo-mark.hero-identity-mark{
+  width:62px;
+  height:62px;
+  flex:0 0 62px;
+  border-radius:50%;
+  background-size:153px auto;
+  background-position:center -3.5px;
+}
+.hero-identity-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
+.hero-identity-name{color:#f4f8fc;font-size:27px;line-height:1.05;font-weight:900;letter-spacing:.075em}
+.hero-identity-subtitle{color:#82bccc;font-size:11px;line-height:1.4;font-weight:750;letter-spacing:.12em;text-transform:uppercase}
+.hero{padding-top:70px}
+@media(max-width:760px){
+ .hero{padding-top:48px}
+ .hero-identity{gap:12px;margin-bottom:22px}
+ .logo-mark.hero-identity-mark{width:48px;height:48px;flex:0 0 48px;background-size:118px auto;background-position:center -2.6px}
+ .hero-identity-name{font-size:21px;letter-spacing:.06em}
+ .hero-identity-subtitle{font-size:9px;letter-spacing:.09em}
+}
+@media(max-width:360px){
+ .logo-mark.hero-identity-mark{width:44px;height:44px;flex:0 0 44px;background-size:108px auto;background-position:center -2.3px}
+ .hero-identity-name{font-size:19px}
+}
