@@ -3,3 +3,26 @@
 @media(max-width:1040px){.hero-grid{grid-template-columns:1fr}.hero h1{max-width:780px}.dashboard{max-width:700px;transform:none}.nav{gap:14px}.topbar-inner{gap:12px}.flow{grid-template-columns:repeat(3,1fr)}.flow-step:nth-child(3)::after{display:none}}
 @media(max-width:760px){.container{width:min(var(--max),calc(100% - 32px))}.section{padding:72px 0}.topbar-inner{height:66px}.topbar .button{display:none}.nav{display:none;position:absolute;top:65px;left:0;right:0;background:#08182a;flex-direction:column;align-items:stretch;padding:22px;gap:20px;border-bottom:1px solid var(--line)}.nav.is-open{display:flex}.mobile-menu-btn{display:inline-flex}.hero{padding:69px 0 78px}.hero h1{font-size:clamp(42px,10vw,58px)}.hero-desc{font-size:16px}.hero-actions .button{width:100%}.hero-bullets{gap:9px 16px}.dash-body{padding:12px}.dash-stats{gap:5px}.stat{padding:9px}.stat .label{font-size:9px}.stat .value{font-size:16px}.stat .growth{font-size:9px}.dash-chart{padding:12px}.flow{grid-template-columns:repeat(2,1fr)}.flow-step:nth-child(3)::after{display:block}.flow-step:nth-child(2)::after,.flow-step:nth-child(4)::after{display:none}.problem-grid,.features-grid,.pricing-grid,.cta-grid,.decision{grid-template-columns:1fr}.feature-card.feature-wide{grid-column:span 1}.decision{gap:20px}.cta-grid{gap:22px}.footer-inner{align-items:flex-start;flex-direction:column}.strip-inner{gap:12px}.legal{margin:40px auto}}@media(max-width:480px){.flow{grid-template-columns:1fr}.flow-step::after{display:none!important}.dash-bottom{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:span 1}.lead-form{padding:22px}.logo{font-size:15px}.lang{font-size:11px}.section h2{font-size:34px}.stat .value{font-size:14px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+
+/* Multilingual switcher: locale codes, never flag icons. */
+.language-switch{display:inline-flex;align-items:center;flex-shrink:0;gap:2px;padding:4px;border:1px solid rgba(210,230,248,.20);border-radius:11px;background:rgba(255,255,255,.045)}
+.locale-link{display:inline-flex;align-items:center;justify-content:center;min-width:36px;min-height:30px;padding:4px 8px;border-radius:7px;color:#acc2d6;font-size:12px;font-weight:800;letter-spacing:.025em;transition:background .18s,color .18s}
+.locale-link:hover{color:#fff;background:rgba(255,255,255,.12)}
+.locale-link.is-active{background:linear-gradient(125deg,#58e8b2,#36cdf0);color:#071323;cursor:default}
+.locale-link:focus-visible{outline:2px solid #73f2bf;outline-offset:3px}
+@media(max-width:1150px){
+ .topbar .nav{display:none;position:absolute;top:74px;left:0;right:0;flex-direction:column;align-items:stretch;gap:20px;padding:22px;background:#08182a;border-bottom:1px solid var(--line)}
+ .topbar .nav.is-open{display:flex}
+ .mobile-menu-btn{display:inline-flex}
+}
+@media(max-width:760px){.topbar .nav{top:65px}}
+@media(max-width:480px){
+ .topbar-inner{gap:7px}
+ .nav-right{gap:7px}
+ .logo{font-size:13px;letter-spacing:0;gap:6px}
+ .logo .dash-brand{width:23px;height:23px;font-size:12px}
+ .language-switch{padding:3px;gap:0}
+ .locale-link{min-width:32px;min-height:29px;padding:3px 5px;font-size:11px}
+ .mobile-menu-btn{padding:7px}
+}
