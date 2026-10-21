@@ -287,3 +287,26 @@
  .screen-switcher{gap:7px}
  .hero-grid{gap:24px}
 }
+
+/* Mobile hero preview deduplication:
+   the full interactive showcase follows below, so avoid a repeated screenshot. */
+.hero-mobile-screen-link{display:none}
+@media(max-width:760px){
+ .hero-product-preview{display:none!important}
+ .hero-grid{display:block}
+ .hero{padding-top:42px;padding-bottom:38px}
+ .hero-mobile-screen-link{
+   display:inline-flex;
+   align-items:center;
+   gap:9px;
+   color:#79edc2;
+   font-size:14px;
+   font-weight:750;
+   margin-top:21px;
+   padding:4px 0;
+   border-bottom:1px solid rgba(94,231,182,.4);
+   text-decoration:none;
+ }
+ .hero-mobile-screen-link:hover{color:#b7ffe1;border-bottom-color:#b7ffe1}
+ .hero-mobile-screen-link:focus-visible{outline:2px solid #82f3cc;outline-offset:5px}
+}
