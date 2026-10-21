@@ -18,7 +18,10 @@
     badge.className = 'integration-status integration-status--' + state;
     badge.textContent = labels[state];
     badge.setAttribute('data-status', state);
-    inner.appendChild(badge);
+    const row = document.createElement('span');
+    row.className = 'integration-status-row';
+    row.appendChild(badge);
+    inner.appendChild(row);
   });
 
   if (!('IntersectionObserver' in window)) return;
