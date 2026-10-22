@@ -41,7 +41,7 @@
   // On .com, use the English root and keep internal links in the current locale.
   if (isCom) {
     const lang = document.documentElement.lang || 'kk';
-    document.querySelectorAll('a[href]').forEach(link => {
+    document.querySelectorAll('a[href]:not(.locale-link)').forEach(link => {
       const href = link.getAttribute('href');
       if (href === '/en/') link.setAttribute('href', '/');
       else if (href === '/en/privacy/') link.setAttribute('href', '/privacy/');
