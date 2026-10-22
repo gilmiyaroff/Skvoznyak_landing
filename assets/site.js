@@ -12,19 +12,23 @@
   const year = document.querySelector('[data-year]');
   if (year) year.textContent = String(new Date().getFullYear());
 
-  // Preserve the current section while switching locales. On Pages preview URLs,
-  // keep navigation inside the preview deployment rather than jumping to production.
-  const isPreview = !/^(?:www\.)?skvoznyak\.(?:kz|com)$/i.test(location.hostname);
-  const inPrivacy = /^\/(?:en\/|ru\/)?privacy\/?(?:index\.html)?$/.test(location.pathname);
-  const inGptAds = /^\/gptads(?:\/(?:ru|en))?\/?(?:index\.html)?$/.test(location.pathname);
-  const localePaths = inPrivacy
-    ? { kk: '/privacy/', ru: '/ru/privacy/', en: '/en/privacy/' }
-    : inGptAds
-      ? { kk: '/gptads/', ru: '/gptads/ru/', en: '/gptads/en/' }
-      : { kk: '/', ru: '/ru/', en: '/en/' };
+  // Keep all language switches on the current domain, including Pages previews.
+  const isCom = /^(?:www\.)?skvoznyak\.com$/i.test(location.hostname);
+  const inPrivacy = /^\/(?:(?:en|ru|kz)\/)?privacy\/?(?:index\.html)?$/.test(location.pathname);
+  const inGptAds = /^\/gptads(?:\/(?:ru|en|kz))?\/?(?:index\.html)?$/.test(location.pathname);
+  const paths = isCom ? {
+    home: { kk: '/kz/', ru: '/ru/', en: '/' },
+    privacy: { kk: '/kz/privacy/', ru: '/ru/privacy/', en: '/privacy/' },
+    gptads: { kk: '/gptads/kz/', ru: '/gptads/ru/', en: '/gptads/' }
+  } : {
+    home: { kk: '/', ru: '/ru/', en: '/en/' },
+    privacy: { kk: '/privacy/', ru: '/ru/privacy/', en: '/en/privacy/' },
+    gptads: { kk: '/gptads/', ru: '/gptads/ru/', en: '/gptads/en/' }
+  };
+  const localePaths = paths[inPrivacy ? 'privacy' : inGptAds ? 'gptads' : 'home'];
   document.querySelectorAll('.language-switch a').forEach(link => {
     const target = link.getAttribute('lang');
-    if (isPreview && localePaths[target]) link.href = localePaths[target];
+    if (localePaths[target]) link.setAttribute('href', localePaths[target]);
     link.addEventListener('click', () => {
       if (location.hash && /^#(?:features|how|pricing|faq|contact)$/.test(location.hash)) {
         const url = new URL(link.href);
@@ -33,6 +37,20 @@
       }
     });
   });
+
+  // On .com, use the English root and keep internal links in the current locale.
+  if (isCom) {
+    const lang = document.documentElement.lang || 'kk';
+    document.querySelectorAll('a[href]:not(.locale-link)').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === '/en/') link.setAttribute('href', '/');
+      else if (href === '/en/privacy/') link.setAttribute('href', '/privacy/');
+      else if (href === '/gptads/en/') link.setAttribute('href', '/gptads/');
+      else if (lang === 'kk' && href === '/') link.setAttribute('href', '/kz/');
+      else if (lang === 'kk' && href === '/privacy/') link.setAttribute('href', '/kz/privacy/');
+      else if (lang === 'kk' && href === '/gptads/') link.setAttribute('href', '/gptads/kz/');
+    });
+  }
 
   // Product showcase: synchronized accessible tabs and an enlarged desktop screenshot.
   const tabs = [...document.querySelectorAll('[data-screen-tab]')];
