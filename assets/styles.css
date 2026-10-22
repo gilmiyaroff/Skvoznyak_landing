@@ -433,3 +433,9 @@ body{letter-spacing:0;text-rendering:optimizeLegibility}
 .footer-links{flex-wrap:wrap}
 @media(max-width:480px){.direct-contact-card{padding:22px 18px}.direct-contact-option{gap:10px;padding:12px}.contact-channel-icon{flex-basis:39px;width:39px;height:39px}.direct-contact-info strong{font-size:14px}}
 @media(prefers-reduced-motion:reduce){.direct-contact-option{transition:none}.direct-contact-option:hover{transform:none}}
+
+
+/* Official WhatsApp identity; inline SVG avoids external Safari sprite loading. */
+.contact-channel-icon.is-whatsapp{background:#25d366}
+.contact-channel-icon.is-whatsapp svg{display:block;width:25px;height:25px}
+@media(max-width:480px){.contact-channel-icon.is-whatsapp svg{width:23px;height:23px}}
