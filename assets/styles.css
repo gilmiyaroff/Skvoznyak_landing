@@ -423,8 +423,8 @@ body{letter-spacing:0;text-rendering:optimizeLegibility}
 .direct-contact-option:hover{border-color:#5ec9c7;box-shadow:0 8px 24px rgba(28,106,121,.12);transform:translateY(-2px)}
 .direct-contact-option:focus-visible{outline:3px solid #48bfb4;outline-offset:3px}
 .contact-channel-icon{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:12px;font-weight:900;font-size:22px;color:white}
-.contact-channel-icon.is-telegram{background:#258fc7;font-style:italic}
-.contact-channel-icon.is-instagram{background:linear-gradient(140deg,#7158cc,#c641b3 52%,#ff9d50);font-size:35px;line-height:1}
+.contact-channel-icon.is-telegram{background:#27a7e7}
+.contact-channel-icon.is-instagram{background:linear-gradient(135deg,#405de6 0%,#833ab4 30%,#c13584 55%,#e1306c 75%,#fcaf45 100%)}
 .direct-contact-info{display:flex;flex:1;flex-direction:column;gap:2px;align-items:flex-start;min-width:0}
 .direct-contact-info strong{font-size:15px;font-weight:800;line-height:1.2}
 .direct-contact-info small{font-size:12px;color:#667a8a;overflow-wrap:anywhere}
@@ -439,3 +439,9 @@ body{letter-spacing:0;text-rendering:optimizeLegibility}
 .contact-channel-icon.is-whatsapp{background:#25d366}
 .contact-channel-icon.is-whatsapp svg{display:block;width:25px;height:25px}
 @media(max-width:480px){.contact-channel-icon.is-whatsapp svg{width:23px;height:23px}}
+
+/* Inline contact brand logos render reliably in Safari and other browsers. */
+.contact-channel-svg{display:block;width:25px;height:25px;flex:none;fill:currentColor}
+.contact-channel-icon.is-telegram .contact-channel-svg{width:25px;height:25px}
+.contact-channel-icon.is-instagram .contact-channel-svg{width:23px;height:23px}
+@media(max-width:480px){.contact-channel-icon.is-telegram .contact-channel-svg{width:23px;height:23px}.contact-channel-icon.is-instagram .contact-channel-svg{width:22px;height:22px}}
