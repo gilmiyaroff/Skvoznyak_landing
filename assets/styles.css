@@ -411,3 +411,25 @@ body{letter-spacing:0;text-rendering:optimizeLegibility}
   .pilot-cases-grid { grid-template-columns: 1fr; }
   .pilot-case { padding: 19px; }
 }
+
+
+/* Direct-contact CTA while lead collection is not available. */
+.direct-contact-card{min-width:0;color:#10263c;background:linear-gradient(160deg,#f7fbfd,#edf5fa);border:1px solid #d7e5ed;border-radius:22px;padding:clamp(22px,3vw,34px);box-shadow:0 25px 60px rgba(0,0,0,.12)}
+.direct-contact-eyebrow{font-size:10px;font-weight:850;letter-spacing:.14em;color:#247e91;margin-bottom:12px}
+.direct-contact-card h3{font-size:clamp(22px,2.35vw,28px);letter-spacing:-.025em;line-height:1.25;margin:0 0 10px;color:#10263c}
+.direct-contact-card>p{font-size:14px;line-height:1.6;margin:0;color:#536d80}
+.direct-contact-options{display:grid;gap:11px;margin:24px 0 17px}
+.direct-contact-option{width:100%;display:flex;align-items:center;gap:13px;padding:12px 14px;min-height:74px;border:1px solid #cfdfe9;border-radius:15px;background:#fff;color:#152e43;transition:border-color .2s,transform .2s,box-shadow .2s}
+.direct-contact-option:hover{border-color:#5ec9c7;box-shadow:0 8px 24px rgba(28,106,121,.12);transform:translateY(-2px)}
+.direct-contact-option:focus-visible{outline:3px solid #48bfb4;outline-offset:3px}
+.contact-channel-icon{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:12px;font-weight:900;font-size:22px;color:white}
+.contact-channel-icon.is-telegram{background:#258fc7;font-style:italic}
+.contact-channel-icon.is-instagram{background:linear-gradient(140deg,#7158cc,#c641b3 52%,#ff9d50);font-size:35px;line-height:1}
+.direct-contact-info{display:flex;flex:1;flex-direction:column;gap:2px;align-items:flex-start;min-width:0}
+.direct-contact-info strong{font-size:15px;font-weight:800;line-height:1.2}
+.direct-contact-info small{font-size:12px;color:#667a8a;overflow-wrap:anywhere}
+.contact-arrow{font-size:21px;color:#5b8191}
+.direct-contact-card>.direct-contact-footnote{margin:0;font-size:12px;color:#647e8d}
+.footer-links{flex-wrap:wrap}
+@media(max-width:480px){.direct-contact-card{padding:22px 18px}.direct-contact-option{gap:10px;padding:12px}.contact-channel-icon{flex-basis:39px;width:39px;height:39px}.direct-contact-info strong{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.direct-contact-option{transition:none}.direct-contact-option:hover{transform:none}}
