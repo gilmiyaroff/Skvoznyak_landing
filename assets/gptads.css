@@ -202,3 +202,15 @@
     transform:none!important;
   }
 }
+
+
+/* GPT Ads contact cards: reliable brand SVG sizing and styling. */
+.gpt-page .direct-contact-option .contact-channel-svg{display:block;width:24px;height:24px;flex:none;fill:currentColor}
+.gpt-page .contact-channel-icon.is-telegram{background:#27a7e7;color:#fff}
+.gpt-page .contact-channel-icon.is-instagram{background:linear-gradient(135deg,#405de6,#833ab4 30%,#c13584 55%,#e1306c 75%,#fcaf45);color:#fff}
+.gpt-page .contact-channel-icon.is-whatsapp{background:#25d366;color:#fff}
+.gpt-page .contact-channel-icon.is-whatsapp svg{width:24px;height:24px;display:block}
+@media(max-width:480px){
+.gpt-page .direct-contact-option .contact-channel-svg,
+.gpt-page .contact-channel-icon.is-whatsapp svg{width:22px;height:22px}
+}
