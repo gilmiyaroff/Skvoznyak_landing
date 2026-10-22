@@ -116,8 +116,10 @@ Google Search Console показан как запланированный ис�
 ## Два домена
 
 - `.kz/` → KZ, `.kz/ru/` → RU, `.kz/en/` → EN.
-- `.com/` → EN без переадресации, `.com/ru/` → RU, `.com/kz/` → KZ.
+- `.com/` → EN (Pages middleware рендерит прямо в корне; на статическом хостинге fallback переводит на `.com/en/`), `.com/ru/` → RU, `.com/kz/` → KZ.
 - ChatGPT Ads: `.kz/gptads/` → KZ, `.com/gptads/` → EN, `.com/gptads/kz/` → KZ.
 - Переключатель языка и внутренние ссылки сохраняют домен пользователя; Cloudflare Pages preview тоже работает.
 - `functions/_middleware.js` переписывает выбранные .com URL на существующие статические страницы, `_routes.json` сохраняет прочие файлы статическими и оставляет `/api/*` доступным.
 - `.kz/sitemap.xml` и `.com/sitemap.xml` выдают соответствующие канонические страницы; аналогично `robots.txt`.
+
+Fallback для статических деплоев: `kz/index.html`, `kz/privacy/index.html`, `gptads/kz/index.html` теперь содержат реальные KZ-страницы вместо клиентских редиректов. Когда Pages Functions недоступны, английская версия .com открывается через `/en/` на том же хосте; домен пользователя сохраняется.
