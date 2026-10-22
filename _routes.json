@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "include": [
+    "/",
+    "/kz",
+    "/kz/",
+    "/privacy",
+    "/privacy/",
+    "/kz/privacy",
+    "/kz/privacy/",
+    "/gptads",
+    "/gptads/",
+    "/gptads/kz",
+    "/gptads/kz/",
+    "/robots.txt",
+    "/sitemap.xml",
+    "/api/*"
+  ],
+  "exclude": []
+}
